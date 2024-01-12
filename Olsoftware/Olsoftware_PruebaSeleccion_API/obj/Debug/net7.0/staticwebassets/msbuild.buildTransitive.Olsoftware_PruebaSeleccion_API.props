@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Olsoftware_PruebaSeleccion_API.props" />
+</Project>

@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "14e7RWQZjdheuHVLVupg59bMhnuUr2seYp+pKJ0KeFg=",
+  "Source": "Olsoftware_PruebaSeleccion_API",
+  "BasePath": "_content/Olsoftware_PruebaSeleccion_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Programs\\ProyectosNet2\\testOS\\testOS\\Olsoftware\\Olsoftware_Aspirante_API\\Olsoftware_Aspirante_API.csproj",
+      "Version": 2,
+      "Source": "Olsoftware_Aspirante_API",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

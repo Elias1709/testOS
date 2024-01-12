@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Olsoftware_Aspirante_API.props" />
+</Project>
