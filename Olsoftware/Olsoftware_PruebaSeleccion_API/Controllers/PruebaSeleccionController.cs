@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using Olsoftware_PruebaSeleccion_API.Datos;
 using Olsoftware_PruebaSeleccion_API.Modelos;
 using Olsoftware_PruebaSeleccion_API.Modelos.Dto;
@@ -14,7 +15,7 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
     [ApiController]
     public class PruebaSeleccionController : ControllerBase
     {
-        private readonly ILogger <PruebaSeleccionController> _logger;
+        private readonly ILogger<PruebaSeleccionController> _logger;
         private readonly ApplicationDbContext _db;
         private readonly IMapper _mapper;
         protected APIResponse _response;
@@ -39,10 +40,10 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
                 _response.statusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 _response.IsExitoso = false;
-                _response.ErrorsMessages = new List<string>() { ex.ToString()};
+                _response.ErrorsMessages = new List<string>() { ex.ToString() };
             }
             return _response;
         }
@@ -90,16 +91,16 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
-        public async Task <ActionResult<APIResponse>> CrearPruebaSeleccion([FromBody] PruebaSeleccionDto pruebaSeleccionDto)
+        public async Task<ActionResult<APIResponse>> CrearPruebaSeleccion([FromBody] PruebaSeleccionDto pruebaSeleccionDto)
         {
             try
             {
-                if(!ModelState.IsValid )
+                if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
 
-                if(pruebaSeleccionDto == null)
+                if (pruebaSeleccionDto == null)
                 {
                     return BadRequest(pruebaSeleccionDto);
                 }
@@ -113,7 +114,7 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
 
                 modelo.FechaInicio = pruebaSeleccionDto.FechaInicio;
                 modelo.FechaFin = pruebaSeleccionDto.FechaFin;
-                
+
                 modelo.FechaActualizacion = DateTime.Now;
 
                 await _db.PruebaSeleccions.AddAsync(modelo);
@@ -126,7 +127,7 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
             catch (Exception ex)
             {
                 _response.IsExitoso = false;
-                _response.ErrorsMessages = new List<string>() { ex.ToString() };                
+                _response.ErrorsMessages = new List<string>() { ex.ToString() };
             }
             return _response;
         }
@@ -136,11 +137,11 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        public async Task <IActionResult> DeletePruebaSeleccion(int id)
+        public async Task<IActionResult> DeletePruebaSeleccion(int id)
         {
             try
             {
-                if (id ==0)
+                if (id == 0)
                 {
                     _response.IsExitoso = false;
                     _response.statusCode = HttpStatusCode.BadRequest;
@@ -148,7 +149,7 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
                 }
                 var pruebaSeleccion = await _db.PruebaSeleccions.FirstOrDefaultAsync(v => v.Id == id);
 
-                if(pruebaSeleccion == null)
+                if (pruebaSeleccion == null)
                 {
                     _response.IsExitoso = false;
                     _response.statusCode = HttpStatusCode.NotFound;
@@ -172,9 +173,9 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public async Task <IActionResult> UpdatePruebaSeleccion(int id, [FromBody] PruebaSeleccionDto pruebaSeleccionDto)
+        public async Task<IActionResult> UpdatePruebaSeleccion(int id, [FromBody] PruebaSeleccionDto pruebaSeleccionDto)
         {
-            if(pruebaSeleccionDto == null && id!= pruebaSeleccionDto.Id)
+            if (pruebaSeleccionDto == null && id != pruebaSeleccionDto.Id)
             {
                 _response.IsExitoso = false;
                 _response.statusCode = HttpStatusCode.BadRequest;
@@ -193,5 +194,8 @@ namespace Olsoftware_PruebaSeleccion_API.Controllers
 
             return Ok(_response);
         }
+
+
+
     }
 }

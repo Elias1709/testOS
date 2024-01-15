@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Olsoftware_PruebaSeleccion_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f75a6971b03cf35613d4f6a54bcc292e647537fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e940ca31b79f144171545910c2398adf99bb0857")]
 [assembly: System.Reflection.AssemblyProductAttribute("Olsoftware_PruebaSeleccion_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Olsoftware_PruebaSeleccion_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
